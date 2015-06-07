@@ -18,26 +18,23 @@ $(document).ready(function() {
 				$(this).hide();
 				$(this).css('left','520px');
 			}
-		);
+		)
 	})
 	.mouseup(function() {
 		$('.ryu-throwing').hide();
 		$('.ryu-ready').show();
 	})
-	.keydown(function(e) {
-		if (e.keyCode() == 88) {
-			alert('this is working');//this does not work right now
-			$('.ryu-still').hide();
-			$('.ryu-cool').show();
-		};
-	})
-	.keyup(function(e) {
-		if (e.keyCode() == 88) {
-			$('.ryu-cool').hide();
-			$('ryu-still').show();
-		};
+	
+  	.keydown(function(e) {
+    	if (e.which == 88) {
+      	alert('wow'); 
+   	}
 	});
+	/*keydown or keyup will not work inside this section.
+	api.jquery recommends I subject keydown/up to the whole document. Will try testing:
+	$(document).keydown(function(e) { }); */
 });
+
 function playHadouken() {
 	$('#hadouken-sound')[0].volume = 0.5;
 	$('#hadouken-sound')[0].load();
