@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$('.ryu').mouseenter(function() {
 		$('.ryu-still').hide();
-		$('ryu-ready').show();
+		$('.ryu-ready').show();
 	})
 		.mouseleave(function() {
 		$('.ryu-ready').hide();
@@ -19,22 +19,22 @@ $(document).ready(function() {
 				$(this).css('left','520px');
 			}
 		)
-	})
-	.mouseup(function() {
-		$('.ryu-throwing').hide();
-		$('.ryu-ready').show();
-	})
-	
-  	.keydown(function(e) {
-    	if (e.which == 88) {
-      	alert('wow'); 
-   	}
 	});
-	/*keydown or keyup will not work inside this section.
-	api.jquery recommends I subject keydown/up to the whole document. Will try testing:
-	$(document).keydown(function(e) { }); */
+	
 });
-
+	$(document).keydown(function(e) {
+		if (e.which == 88) {
+			$('.ryu-still').hide();
+			$('.ryu-throwing').hide();
+			//$('.ryu-ready').hide();
+			$('.ryu-cool').show();
+		}
+	}).keyup(function(e) {
+		if (e.which == 88) {
+			$('.ryu-cool').hide();
+			$('.ryu-still').show();
+		}
+	});
 function playHadouken() {
 	$('#hadouken-sound')[0].volume = 0.5;
 	$('#hadouken-sound')[0].load();
