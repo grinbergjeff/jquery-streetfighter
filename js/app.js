@@ -19,20 +19,23 @@ $(document).ready(function() {
 				$(this).css('left','520px');
 			}
 		)
+	})
+	.mouseup(function(){
+		$('.ryu-throwing').hide();
+		$('.ryu-ready').show();
 	});
-	
 });
 	$(document).keydown(function(e) {
 		if (e.which == 88) {
 			$('.ryu-still').hide();
 			$('.ryu-throwing').hide();
-			//$('.ryu-ready').hide();
+			$('.ryu-ready').hide();
 			$('.ryu-cool').show();
 		}
 	}).keyup(function(e) {
 		if (e.which == 88) {
 			$('.ryu-cool').hide();
-			$('.ryu-still').show();
+			$('.ryu-ready').show();
 		}
 	});
 function playHadouken() {
