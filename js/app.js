@@ -1,10 +1,13 @@
 $(document).ready(function() {
 	$('.ryu').mouseenter(function() {
 		$('.ryu-still').hide();
+		$('.ryu-cool').hide();//fix the hold x and drag glitch
 		$('.ryu-ready').show();
 	})
 		.mouseleave(function() {
 		$('.ryu-ready').hide();
+		$('.ryu-throwing').hide();//fix the click and drag glitch
+		$('.ryu-cool').hide();//fix the hold x and drag glitch
 		$('.ryu-still').show();
 	})
 	.mousedown(function(){
@@ -18,7 +21,7 @@ $(document).ready(function() {
 				$(this).hide();
 				$(this).css('left','520px');
 			}
-		)
+		);
 	})
 	.mouseup(function(){
 		$('.ryu-throwing').hide();
